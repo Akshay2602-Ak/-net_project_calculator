@@ -1,0 +1,46 @@
+﻿@page
+@model IndexModel
+@{
+    ViewData["Title"] = "Calculator";
+}
+
+<div class="calculator-page">
+    <div class="calculator">
+        <h1>Calculator</h1>
+
+        <div class="display">
+            @Model.Display
+        </div>
+
+        <form method="post">
+            <div class="buttons">
+                <button type="submit" name="Button" value="7">7</button>
+                <button type="submit" name="Button" value="8">8</button>
+                <button type="submit" name="Button" value="9">9</button>
+                <button type="submit" name="Button" value="/">÷</button>
+
+                <button type="submit" name="Button" value="4">4</button>
+                <button type="submit" name="Button" value="5">5</button>
+                <button type="submit" name="Button" value="6">6</button>
+                <button type="submit" name="Button" value="*">×</button>
+
+                <button type="submit" name="Button" value="1">1</button>
+                <button type="submit" name="Button" value="2">2</button>
+                <button type="submit" name="Button" value="3">3</button>
+                <button type="submit" name="Button" value="-">−</button>
+
+                <button type="submit" name="Button" value="0">0</button>
+                <button type="submit" name="Button" value=".">.</button>
+                <button type="submit" name="Button" value="=">=</button>
+                <button type="submit" name="Button" value="+">+</button>
+
+                <button class="clear" type="submit" name="Button" value="C">Clear</button>
+            </div>
+        </form>
+
+        @if (!string.IsNullOrEmpty(Model.ErrorMessage))
+        {
+            <div class="error">@Model.ErrorMessage</div>
+        }
+    </div>
+</div>
